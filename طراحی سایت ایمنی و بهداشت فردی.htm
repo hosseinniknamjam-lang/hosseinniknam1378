@@ -1,0 +1,223 @@
+<!--
+پکیج «۵ صفحه HTML ساده» برای وب‌سایت HSE (ایمنی، سلامت و محیط زیست)
+- بدون React/Node.
+- استفاده از TailwindCSS از CDN.
+- هدر/فوتر یکسان در همه صفحات.
+- صفحه «گالری» امکان آپلود و پیش‌نمایش عکس + افزودن لینک دانلود برای فایل‌ها دارد (local preview).
+- برای استقرار: کل این ۵ فایل را در یک پوشه روی هر هاستی آپلود کنید.
+
+فهرست فایل‌ها:
+1) index.html         — صفحه اصلی
+2) about.html         — درباره ما
+3) services.html      — خدمات
+4) gallery.html       — گالری و مستندات (با آپلود)
+5) contact.html       — تماس با ما
+-->
+
+
+<!-- ======================= 1) index.html ======================= -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سامانه HSE — صفحه اصلی</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body class="min-h-screen bg-neutral-50 text-neutral-800 flex flex-col">
+  <!-- Header -->
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto p-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-10 h-10 rounded-2xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center">🦺</span>
+        <strong>سامانه HSE</strong>
+      </div>
+      <nav class="flex gap-4 text-sm">
+        <a href="index.html" class="hover:text-emerald-700 font-semibold">صفحه اصلی</a>
+        <a href="about.html" class="hover:text-emerald-700">درباره ما</a>
+        <a href="services.html" class="hover:text-emerald-700">خدمات</a>
+        <a href="gallery.html" class="hover:text-emerald-700">گالری</a>
+        <a href="contact.html" class="hover:text-emerald-700">تماس</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-black leading-[1.2]">ایمنی امروز، سلامت فردا</h1>
+        <p class="mt-4 text-neutral-600">با استقرار نظام HSE یکپارچه، ریسک‌ها را شناسایی، ارزیابی و کنترل کنید؛ از آموزش و فرهنگ‌سازی تا ممیزی و بهبود مستمر.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="services.html" class="px-4 py-2 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 shadow">خدمات ما</a>
+          <a href="gallery.html" class="px-4 py-2 rounded-2xl bg-white border border-neutral-300 hover:border-neutral-400 shadow-sm">نمونه مستندات</a>
+        </div>
+      </div>
+      <div>
+        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-emerald-50 to-amber-50 border border-neutral-200 shadow-sm"></div>
+      </div>
+    </section>
+
+    <!-- Quick Services -->
+    <section class="bg-white border-y border-neutral-200">
+      <div class="max-w-6xl mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-4 rounded-3xl border">ارزیابی ریسک (HAZID/JSA)</div>
+        <div class="p-4 rounded-3xl border">آموزش ایمنی و بهداشت</div>
+        <div class="p-4 rounded-3xl border">ممیزی و بازرسی</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-neutral-500 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div>© <span id="year"></span> سامانه HSE — همه حقوق محفوظ است.</div>
+      <div class="flex items-center gap-4">
+        <a href="about.html" class="hover:text-neutral-700">درباره</a>
+        <a href="services.html" class="hover:text-neutral-700">خدمات</a>
+        <a href="contact.html" class="hover:text-neutral-700">تماس</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- ======================= 2) about.html ======================= -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سامانه HSE — درباره ما</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body class="min-h-screen bg-neutral-50 text-neutral-800 flex flex-col">
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto p-4 flex items-center justify-between">
+      <div class="flex items-center gap-2"><span class="w-10 h-10 rounded-2xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center">🦺</span><strong>سامانه HSE</strong></div>
+      <nav class="flex gap-4 text-sm">
+        <a href="index.html" class="hover:text-emerald-700">صفحه اصلی</a>
+        <a href="about.html" class="hover:text-emerald-700 font-semibold">درباره ما</a>
+        <a href="services.html" class="hover:text-emerald-700">خدمات</a>
+        <a href="gallery.html" class="hover:text-emerald-700">گالری</a>
+        <a href="contact.html" class="hover:text-emerald-700">تماس</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1 max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold">درباره ما</h1>
+    <p class="mt-4 text-neutral-600">معرفی سازمان، چشم‌انداز، مأموریت و ارزش‌های HSE. تیم تخصصی، گواهینامه‌ها و استانداردهای رعایت‌شده (ISO 45001/14001/9001).</p>
+  </main>
+  <footer class="border-t text-sm text-neutral-500 p-4 text-center">© <span id="year2"></span> سامانه HSE</footer>
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- ======================= 3) services.html ======================= -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سامانه HSE — خدمات</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body class="min-h-screen bg-neutral-50 text-neutral-800 flex flex-col">
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto p-4 flex items-center justify-between">
+      <div class="flex items-center gap-2"><span class="w-10 h-10 rounded-2xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center">🦺</span><strong>سامانه HSE</strong></div>
+      <nav class="flex gap-4 text-sm">
+        <a href="index.html" class="hover:text-emerald-700">صفحه اصلی</a>
+        <a href="about.html" class="hover:text-emerald-700">درباره ما</a>
+        <a href="services.html" class="hover:text-emerald-700 font-semibold">خدمات</a>
+        <a href="gallery.html" class="hover:text-emerald-700">گالری</a>
+        <a href="contact.html" class="hover:text-emerald-700">تماس</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1 max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold">خدمات HSE</h1>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="p-4 rounded-3xl border bg-white">
+        <h3 class="font-semibold">ارزیابی ریسک (HAZID/JSA)</h3>
+        <p class="text-sm text-neutral-600 mt-2">شناسایی خطرات، تحلیل احتمال/شدت و برنامه کنترل.</p>
+      </div>
+      <div class="p-4 rounded-3xl border bg-white">
+        <h3 class="font-semibold">آموزش‌های ایمنی</h3>
+        <p class="text-sm text-neutral-600 mt-2">دوره‌های مقدماتی تا تخصصی، مانور و شبیه‌سازی.</p>
+      </div>
+      <div class="p-4 rounded-3xl border bg-white">
+        <h3 class="font-semibold">ممیزی و بازرسی</h3>
+        <p class="text-sm text-neutral-600 mt-2">چک‌لیست‌ها، گزارش مغایرت و اقدامات اصلاحی/پیشگیرانه.</p>
+      </div>
+      <div class="p-4 rounded-3xl border bg-white">
+        <h3 class="font-semibold">مدیریت حوادث</h3>
+        <p class="text-sm text-neutral-600 mt-2">گزارش، ریشه‌یابی (RCA) و درس‌آموخته‌ها.</p>
+      </div>
+      <div class="p-4 rounded-3xl border bg-white">
+        <h3 class="font-semibold">بهداشت شغلی</h3>
+        <p class="text-sm text-neutral-600 mt-2">پایش عوامل زیان‌آور، ارگونومی و بهداشت فردی.</p>
+      </div>
+      <div class="p-4 rounded-3xl border bg-white">
+        <h3 class="font-semibold">محیط زیست</h3>
+        <p class="text-sm text-neutral-600 mt-2">پسماند، پساب، آلودگی هوا و انرژی.</p>
+      </div>
+    </div>
+  </main>
+  <footer class="border-t text-sm text-neutral-500 p-4 text-center">© <span id="year3"></span> سامانه HSE</footer>
+  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- ======================= 4) gallery.html ======================= -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سامانه HSE — گالری و مستندات</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body class="min-h-screen bg-neutral-50 text-neutral-800 flex flex-col">
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto p-4 flex items-center justify-between">
+      <div class="flex items-center gap-2"><span class="w-10 h-10 rounded-2xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center">🦺</span><strong>سامانه HSE</strong></div>
+      <nav class="flex gap-4 text-sm">
+        <a href="index.html" class="hover:text-emerald-700">صفحه اصلی</a>
+        <a href="about.html" class="hover:text-emerald-700">درباره ما</a>
+        <a href="services.html" class="hover:text-emerald-700">خدمات</a>
+        <a href="gallery.html" class="hover:text-emerald-700 font-semibold">گالری</a>
+        <a href="contact.html" class="hover:text-emerald-700">تماس</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 py-12 space-y-12">
+    <!-- تصاویر -->
+    <section>
+      <div class="flex items-center justify-between">
+        <h1 class="text-3xl font-bold">گالری تصاویر میدانی</h1>
+        <label class="flex items-center gap-2 px-3 py-2 bg-emerald-600 text-white rounded-2xl cursor-pointer hover:bg-emerald-700">
+          افزودن عکس
+          <input id="imgInput" type=
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
